@@ -3,7 +3,13 @@ import AuthRedirect from './AuthRedirect';
 import ProtectedRoute from './ProtectedRoute';
 import LoginPage from '@/pages/LoginPage';
 import DashboardPage from '@/pages/DashboardPage';
+import CatalogPage from '@/pages/CatalogPage';
+import AddItemPage from '@/pages/AddItemPage';
+import MembersPage from '@/pages/MembersPage';
+import LoanFormPage from '@/pages/LoanFormPage';
+import LoansPage from '@/pages/LoansPage';
 import NotFoundPage from '@/pages/NotFoundPage';
+import { STAFF_ROLES } from '@/utils/role';
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +25,46 @@ export const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <DashboardPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/catalog',
+    element: (
+      <ProtectedRoute>
+        <CatalogPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/catalog/new',
+    element: (
+      <ProtectedRoute allowedRoles={STAFF_ROLES}>
+        <AddItemPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/members',
+    element: (
+      <ProtectedRoute allowedRoles={STAFF_ROLES}>
+        <MembersPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/loans',
+    element: (
+      <ProtectedRoute allowedRoles={STAFF_ROLES}>
+        <LoansPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/loans/new',
+    element: (
+      <ProtectedRoute allowedRoles={STAFF_ROLES}>
+        <LoanFormPage />
       </ProtectedRoute>
     ),
   },
