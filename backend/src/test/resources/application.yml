@@ -1,0 +1,31 @@
+# Test config. DataSource + Redis connection details are injected by Testcontainers
+# (@ServiceConnection), so they are intentionally absent here.
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+
+library:
+  jwt:
+    secret: test-secret-key-long-enough-for-hmac-sha256-0123456789-abcdef
+    issuer: library-api-test
+    access-token-expiration-minutes: 15
+    refresh-token-expiration-hours: 168
+  cookie:
+    name: refresh_token
+    secure: false
+    same-site: Lax
+    path: /api/v1/auth
+  cors:
+    allowed-origins: http://localhost:5173
+  admin:
+    # Don't auto-seed during tests; each test sets up exactly the users it needs.
+    enabled: false
+    username: admin
+    password: admin123
+
+logging:
+  level:
+    org.testcontainers: WARN
+    com.github.dockerjava: WARN
