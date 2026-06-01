@@ -50,3 +50,11 @@ library:
     enabled: ${ADMIN_SEED_ENABLED:true}
     username: ${ADMIN_USERNAME:admin}
     password: ${ADMIN_PASSWORD:admin123}
+  demo:
+    # Seeds demo catalog/members + a librarian & member login when the catalog is empty.
+    # On in dev, off elsewhere.
+    enabled: ${DEMO_SEED_ENABLED:false}
+    librarian-username: ${DEMO_LIBRARIAN_USERNAME:librarian}
+    librarian-password: ${DEMO_LIBRARIAN_PASSWORD:librarian123}
+    member-username: ${DEMO_MEMBER_USERNAME:member}
+    member-password: ${DEMO_MEMBER_PASSWORD:member123}

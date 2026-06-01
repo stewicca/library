@@ -2,6 +2,10 @@ spring:
   jpa:
     show-sql: true
 
+library:
+  demo:
+    enabled: true
+
 logging:
   level:
     com.library.api: DEBUG
