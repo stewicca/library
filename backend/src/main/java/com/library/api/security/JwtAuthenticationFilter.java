@@ -18,6 +18,12 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
+/**
+ * Per-request filter that authenticates the caller from a Bearer JWT access token.
+ *
+ * @author stewicca
+ * @version 1.0
+ */
 @Component
 @Slf4j
 @RequiredArgsConstructor

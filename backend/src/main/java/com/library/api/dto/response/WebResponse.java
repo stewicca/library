@@ -9,6 +9,9 @@ import java.util.List;
  * Uniform response envelope for every endpoint.
  *
  * @param <T> payload type
+ *
+ * @author stewicca
+ * @version 1.0
  */
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)

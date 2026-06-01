@@ -9,6 +9,9 @@ import lombok.Getter;
  * {@code GrantedAuthority} and what {@code hasRole(...)} / {@code @PreAuthorize} match against.
  * The {@code name()} ({@code ADMIN}, {@code LIBRARIAN}, {@code MEMBER}) is the canonical value
  * exposed to clients in the JWT claim and the login response.</p>
+ *
+ * @author stewicca
+ * @version 1.0
  */
 @Getter
 public enum UserRole {

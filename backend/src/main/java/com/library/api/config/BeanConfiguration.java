@@ -10,6 +10,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * Core security beans: password encoder, DAO authentication provider and the authentication manager.
+ *
+ * @author stewicca
+ * @version 1.0
+ */
 @Configuration
 @RequiredArgsConstructor
 public class BeanConfiguration {

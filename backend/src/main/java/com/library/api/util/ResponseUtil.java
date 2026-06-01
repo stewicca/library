@@ -6,6 +6,12 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
+/**
+ * Helpers for building {@code ResponseEntity<WebResponse<T>>} with a consistent shape.
+ *
+ * @author stewicca
+ * @version 1.0
+ */
 public final class ResponseUtil {
     private ResponseUtil() {
     }

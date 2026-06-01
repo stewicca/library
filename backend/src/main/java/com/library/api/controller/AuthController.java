@@ -27,6 +27,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+/**
+ * REST endpoints for authentication: login, token refresh, logout and current-user lookup.
+ *
+ * @author stewicca
+ * @version 1.0
+ */
 @RestController
 @RequestMapping(ApiRoute.AUTH)
 @RequiredArgsConstructor

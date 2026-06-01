@@ -19,6 +19,14 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.List;
 
+/**
+ * Stateless security filter chain: CORS, disabled CSRF/form-login, the JWT authentication
+ * filter, and the public (login/refresh/Swagger) endpoints. Method security is enabled so
+ * {@code @PreAuthorize} works on controllers.
+ *
+ * @author stewicca
+ * @version 1.0
+ */
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity

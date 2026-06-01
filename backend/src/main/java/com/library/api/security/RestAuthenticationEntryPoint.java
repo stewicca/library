@@ -13,7 +13,13 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-/** Returns a JSON 401 instead of the default redirect when authentication is missing/invalid. */
+/**
+ * Returns a JSON 401 {@link com.library.api.dto.response.WebResponse} instead of the default
+ * redirect when authentication is missing or invalid.
+ *
+ * @author stewicca
+ * @version 1.0
+ */
 @Component
 @RequiredArgsConstructor
 public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {

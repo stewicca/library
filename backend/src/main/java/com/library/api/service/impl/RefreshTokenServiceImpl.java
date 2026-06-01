@@ -16,6 +16,9 @@ import java.util.UUID;
  *     <li>{@code refresh:user:{userId}}  -> token</li>
  *     <li>{@code refresh:token:{token}}  -> userId</li>
  * </ul>
+ *
+ * @author stewicca
+ * @version 1.0
  */
 @Service
 @RequiredArgsConstructor

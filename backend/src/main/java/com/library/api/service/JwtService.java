@@ -3,6 +3,12 @@ package com.library.api.service;
 import com.library.api.entity.UserAccount;
 import jakarta.servlet.http.HttpServletRequest;
 
+/**
+ * Issuing, parsing and blacklisting of JWT access tokens.
+ *
+ * @author stewicca
+ * @version 1.0
+ */
 public interface JwtService {
     String generateAccessToken(UserAccount userAccount);
 

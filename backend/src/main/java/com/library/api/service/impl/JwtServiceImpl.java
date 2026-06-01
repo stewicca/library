@@ -23,6 +23,12 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
+/**
+ * Default {@link com.library.api.service.JwtService} backed by auth0 java-jwt and Redis.
+ *
+ * @author stewicca
+ * @version 1.0
+ */
 @Service
 @Slf4j
 public class JwtServiceImpl implements JwtService {

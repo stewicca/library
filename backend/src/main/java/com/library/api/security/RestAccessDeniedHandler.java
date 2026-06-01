@@ -11,7 +11,13 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-/** Returns a JSON 403 when an authenticated user lacks the required role. */
+/**
+ * Returns a JSON 403 {@link com.library.api.dto.response.WebResponse} when an authenticated
+ * user lacks the required role.
+ *
+ * @author stewicca
+ * @version 1.0
+ */
 @Component
 @RequiredArgsConstructor
 public class RestAccessDeniedHandler implements AccessDeniedHandler {

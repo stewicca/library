@@ -8,6 +8,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * <p>For local dev behind the Vite proxy (same origin) {@code secure=false} and
  * {@code sameSite=Lax} work. For a cross-site deployment use {@code secure=true} and
  * {@code sameSite=None}.</p>
+ *
+ * @author stewicca
+ * @version 1.0
  */
 @ConfigurationProperties(prefix = "library.cookie")
 public record CookieProperties(

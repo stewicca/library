@@ -16,6 +16,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+/**
+ * Default {@link com.library.api.service.AuthService}: authenticates and manages access/refresh tokens.
+ *
+ * @author stewicca
+ * @version 1.0
+ */
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {

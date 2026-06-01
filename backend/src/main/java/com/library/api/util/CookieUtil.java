@@ -9,6 +9,12 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.Optional;
 
+/**
+ * Builds and reads the HttpOnly refresh-token cookie.
+ *
+ * @author stewicca
+ * @version 1.0
+ */
 @Component
 public class CookieUtil {
 

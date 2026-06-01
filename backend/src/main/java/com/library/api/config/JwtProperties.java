@@ -7,6 +7,9 @@ import org.springframework.validation.annotation.Validated;
 
 /**
  * JWT / token settings bound from the {@code library.jwt.*} properties.
+ *
+ * @author stewicca
+ * @version 1.0
  */
 @Validated
 @ConfigurationProperties(prefix = "library.jwt")

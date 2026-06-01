@@ -8,6 +8,12 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * OpenAPI/Swagger configuration, including the bearer-token security scheme.
+ *
+ * @author stewicca
+ * @version 1.0
+ */
 @Configuration
 public class OpenApiConfiguration {
 

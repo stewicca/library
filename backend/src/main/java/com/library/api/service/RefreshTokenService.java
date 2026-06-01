@@ -1,5 +1,11 @@
 package com.library.api.service;
 
+/**
+ * Lifecycle of opaque refresh tokens stored in Redis.
+ *
+ * @author stewicca
+ * @version 1.0
+ */
 public interface RefreshTokenService {
     /** Issue a brand new refresh token for the user, replacing any existing one. */
     String issue(String userId);

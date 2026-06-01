@@ -21,6 +21,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * A login account (authentication identity) with a role; distinct from a library {@link Member}.
+ *
+ * @author stewicca
+ * @version 1.0
+ */
 @Entity
 @Table(name = "user_accounts")
 @Getter

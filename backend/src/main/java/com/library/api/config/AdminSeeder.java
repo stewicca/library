@@ -13,6 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * Seeds a single ADMIN account on startup if it does not already exist, so the system is never
  * locked out. Toggle with {@code library.admin.enabled}.
+ *
+ * @author stewicca
+ * @version 1.0
  */
 @Component
 @Slf4j
