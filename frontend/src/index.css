@@ -1,2 +1,127 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: false;
+}
+
+/*
+ * "library" — an editorial / literary theme: warm paper, ink, deep forest green
+ * with a brass accent. Built for the Library app's assessor-facing UI.
+ */
+@plugin "daisyui/theme" {
+  name: "library";
+  default: true;
+  color-scheme: light;
+
+  --color-base-100: oklch(99% 0.006 85);
+  --color-base-200: oklch(96.3% 0.013 84);
+  --color-base-300: oklch(91% 0.017 82);
+  --color-base-content: oklch(27% 0.018 60);
+
+  --color-primary: oklch(46% 0.082 153);
+  --color-primary-content: oklch(97% 0.013 95);
+  --color-secondary: oklch(73% 0.092 76);
+  --color-secondary-content: oklch(28% 0.04 70);
+  --color-accent: oklch(48% 0.13 26);
+  --color-accent-content: oklch(97% 0.012 85);
+  --color-neutral: oklch(28% 0.03 152);
+  --color-neutral-content: oklch(95% 0.014 90);
+
+  --color-info: oklch(56% 0.08 232);
+  --color-info-content: oklch(97% 0.012 232);
+  --color-success: oklch(54% 0.1 152);
+  --color-success-content: oklch(97% 0.013 152);
+  --color-warning: oklch(76% 0.12 76);
+  --color-warning-content: oklch(28% 0.05 70);
+  --color-error: oklch(50% 0.16 27);
+  --color-error-content: oklch(97% 0.012 27);
+
+  --radius-selector: 0.4rem;
+  --radius-field: 0.45rem;
+  --radius-box: 0.7rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.27rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@theme {
+  --font-sans: "Spline Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  --color-paper-line: oklch(91% 0.017 82);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-base-200);
+    /* Layered paper atmosphere: warm wash + faint grain. */
+    background-image:
+      radial-gradient(120% 90% at 100% 0%, oklch(73% 0.092 76 / 0.1) 0%, transparent 45%),
+      radial-gradient(120% 110% at 0% 100%, oklch(46% 0.082 153 / 0.07) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: oklch(73% 0.092 76 / 0.5);
+  }
+
+  /* Refined display headings use Fraunces with tight tracking. */
+  .font-display {
+    font-optical-sizing: auto;
+    letter-spacing: -0.01em;
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(82% 0.02 80);
+    border: 3px solid var(--color-base-200);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(72% 0.03 80);
+  }
+}
+
+@layer utilities {
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .animate-rise {
+    opacity: 0;
+    animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .animate-fade {
+    opacity: 0;
+    animation: fade 0.8s ease forwards;
+  }
+
+  /* Hairline rule used between editorial sections. */
+  .rule-hairline {
+    background-image: linear-gradient(to right, transparent, var(--color-paper-line) 12%, var(--color-paper-line) 88%, transparent);
+  }
+}
