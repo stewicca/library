@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    hibernate:
+      # Use validate in production and manage schema with migrations (Flyway/Liquibase).
+      ddl-auto: ${JPA_DDL_AUTO:validate}
+    show-sql: false
+
+library:
+  cookie:
+    # Cross-site production cookie: requires HTTPS.
+    secure: ${REFRESH_COOKIE_SECURE:true}
+    same-site: ${REFRESH_COOKIE_SAME_SITE:None}
+
+logging:
+  level:
+    com.library.api: INFO
