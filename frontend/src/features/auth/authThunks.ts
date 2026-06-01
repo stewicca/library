@@ -1,16 +1,9 @@
-import { isAxiosError } from 'axios';
 import toast from 'react-hot-toast';
 import { createAppAsyncThunk } from '@/app/createAppAsyncThunk';
+import { extractMessage } from '@/lib/extractMessage';
 import { authApi } from './authApi';
 import { clearCredentials, setCredentials, setStatus } from './authSlice';
-import type { AuthPayload, LoginCredentials, WebResponse } from './types';
-
-function extractMessage(error: unknown, fallback: string): string {
-  if (isAxiosError<WebResponse<unknown>>(error)) {
-    return error.response?.data?.message ?? error.message ?? fallback;
-  }
-  return fallback;
-}
+import type { AuthPayload, LoginCredentials } from './types';
 
 /** Log in, store credentials in the Redux store, and surface a success toast. */
 export const loginThunk = createAppAsyncThunk<AuthPayload, LoginCredentials>(
